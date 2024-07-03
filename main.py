@@ -2,12 +2,23 @@ import random
 
 
 def merge(number1, number2):
-    """
-    ########################################
-    Code Your Program here
-    ########################################
-    """
     mlist = []
+    while len(number1) > 0 or len(number2) > 0:
+        if len(number1) > 0 and len(number2) > 0:
+            if number1[0] > number2[0]:
+                mlist.append(number2[0])
+                number2.remove(number2[0])
+            else:
+                mlist.append(number1[0])
+                number1.remove(number1[0])
+        else:
+            if len(number1) > 0:
+                mlist.append(number1[0])
+                number1.remove(number1[0])
+            else:
+                mlist.append(number2[0])
+                number2.remove(number2[0])
+
 
     #################
     # Do not delete return statement
